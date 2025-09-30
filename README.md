@@ -30,5 +30,5 @@ git clone https://github.com/nnichaelangello/Tugas-3-CSS-Mata-Kuliah-Pemrograman
 ## Cara Menjalankan
 
 1. Clone repositori menggunakan perintah di atas.
-2. Buka file `index.html` di peramban web (misalnya, Google Chrome atau Mozilla Firefox).
-3. Pastikan file `style.css` berada di direktori yang sama dengan `index.html` untuk memastikan styling diterapkan dengan benar.
+2. Buka file `praktikum2.html` di peramban web (misalnya, Google Chrome atau Mozilla Firefox).
+3. Pastikan file `style.css` berada di direktori yang sama dengan `praktikum2.html` untuk memastikan styling diterapkan dengan benar.
