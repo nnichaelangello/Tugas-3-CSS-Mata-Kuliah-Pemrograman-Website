@@ -1,0 +1,252 @@
+/* 
+ * Bagian :root mendefinisikan variabel CSS (custom properties) yang dapat digunakan secara global.
+ * Tujuan: Memusatkan pengaturan warna, bayangan, radius, dan transisi untuk memudahkan pemeliharaan dan konsistensi desain.
+ * Variabel ini memungkinkan perubahan nilai di satu tempat tanpa perlu mengubah banyak aturan CSS.
+ */
+:root {
+  --primary-bg: #e0f7fa; /* Warna latar belakang utama dengan nuansa biru muda */
+  --accent-color: #0077b6; /* Warna aksen untuk elemen penting seperti judul atau tautan */
+  --text-primary: #1a1a1a; /* Warna teks utama (gelap) untuk kontras tinggi */
+  --text-secondary: #4a4a4a; /* Warna teks sekunder (abu-abu) untuk teks pendukung */
+  --highlight-color: #ff6b6b; /* Warna sorotan untuk menarik perhatian pada elemen tertentu */
+  --button-bg: #0288d1; /* Warna latar tombol utama */
+  --button-hover: #01579b; /* Warna latar tombol saat hover (lebih gelap) */
+  --card-bg: #ffffff; /* Warna latar untuk kartu atau panel */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kedalaman elemen */
+  --border-radius: 12px; /* Radius sudut untuk elemen seperti kartu dan tombol */
+  --transition: all 0.3s ease; /* Transisi halus untuk perubahan properti seperti hover */
+}
+
+/* 
+ * Reset default browser untuk margin, padding, dan box-sizing.
+ * Tujuan: Menghilangkan perbedaan gaya antar browser dan memastikan layout konsisten.
+ */
+* {
+  margin: 0; /* Menghapus margin default */
+  padding: 0; /* Menghapus padding default */
+  box-sizing: border-box; /* Menggunakan border-box untuk menghitung dimensi elemen */
+}
+
+/* 
+ * Gaya dasar untuk elemen <body>.
+ * Tujuan: Mengatur latar belakang, font, dan tata letak umum halaman.
+ */
+body {
+  background: linear-gradient(135deg, var(--primary-bg), #b3e5fc); /* Latar belakang gradien dari biru muda ke biru lebih terang */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font stack untuk kompatibilitas lintas platform */
+  color: var(--text-primary); /* Warna teks utama */
+  line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
+  padding: 40px 20px; /* Padding untuk ruang di sekitar konten */
+  min-height: 100vh; /* Memastikan body mengisi seluruh tinggi viewport */
+}
+
+/* 
+ * Gaya untuk elemen heading <h1>.
+ * Tujuan: Membuat judul utama menonjol dengan warna aksen dan efek bayangan teks.
+ */
+h1 {
+  text-align: center; /* Posisi teks di tengah */
+  color: var(--accent-color); /* Warna aksen untuk kontras */
+  font-size: 2.5rem; /* Ukuran font besar untuk hierarki visual */
+  margin-bottom: 2rem; /* Jarak bawah untuk pemisahan */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan teks untuk kedalaman */
+}
+
+/* 
+ * Gaya untuk elemen heading <h2>.
+ * Tujuan: Menyediakan heading sekunder dengan ukuran lebih kecil untuk hierarki yang jelas.
+ */
+h2 {
+  color: var(--text-primary); /* Warna teks utama */
+  font-size: 1.75rem; /* Ukuran font sedang */
+  margin: 1.5rem 0 1rem; /* Jarak atas dan bawah untuk pemisahan */
+}
+
+/* 
+ * Gaya untuk elemen heading <h3>.
+ * Tujuan: Heading tersier dengan warna sekunder untuk kontras lebih lembut.
+ */
+h3 {
+  color: var(--text-secondary); /* Warna teks sekunder */
+  font-size: 1.25rem; /* Ukuran font kecil */
+  margin: 1rem 0; /* Jarak atas dan bawah */
+}
+
+/* 
+ * Gaya untuk elemen paragraf <p>.
+ * Tujuan: Mengatur teks paragraf dengan warna sekunder untuk keterbacaan.
+ */
+p {
+  font-size: 1rem; /* Ukuran font standar */
+  color: var(--text-secondary); /* Warna teks sekunder */
+  margin-bottom: 1rem; /* Jarak bawah untuk pemisahan */
+}
+
+/* 
+ * Gaya untuk elemen dengan ID 'highlight'.
+ * Tujuan: Menyoroti teks tertentu dengan warna dan ketebalan font khusus.
+ */
+#highlight {
+  color: var(--highlight-color); /* Warna sorotan merah muda */
+  font-weight: 600; /* Ketebalan font sedang */
+  font-size: 1.25rem; /* Ukuran font sedikit lebih besar */
+}
+
+/* 
+ * Gaya untuk elemen dengan kelas 'fancy'.
+ * Tujuan: Memberikan gaya italic dan warna aksen untuk teks dekoratif.
+ */
+.fancy {
+  font-style: italic; /* Teks miring */
+  color: var(--accent-color); /* Warna aksen biru */
+  font-weight: 500; /* Ketebalan font sedang */
+}
+
+/* 
+ * Gaya untuk elemen dengan kelas 'example'.
+ * Tujuan: Menandai teks contoh dengan warna hijau dan font khusus.
+ */
+.example {
+  font-family: 'Inter', sans-serif; /* Font Inter untuk konsistensi */
+  font-size: 1.1rem; /* Ukuran font sedikit lebih besar */
+  font-weight: 500; /* Ketebalan font sedang */
+  color: #2e7d32; /* Warna hijau untuk menandakan contoh */
+}
+
+/* 
+ * Gaya untuk elemen daftar <ul> dan <ol>.
+ * Tujuan: Membuat daftar dengan latar belakang kartu, bayangan, dan sudut membulat.
+ */
+ul.listsatu,
+ol.listdua {
+  background: var(--card-bg); /* Latar belakang putih untuk kartu */
+  margin: 1rem 0; /* Jarak atas dan bawah */
+  padding: 1rem; /* Ruang dalam */
+  border-radius: var(--border-radius); /* Sudut membulat */
+  box-shadow: var(--shadow); /* Efek bayangan untuk kedalaman */
+  list-style-position: inside; /* Posisi penanda daftar di dalam */
+}
+
+/* 
+ * Gaya khusus untuk <ul> dengan kelas 'listsatu'.
+ * Tujuan: Mengatur penanda daftar sebagai bullet (disc).
+ */
+ul.listsatu {
+  list-style-type: disc; /* Penanda bullet */
+}
+
+/* 
+ * Gaya khusus untuk <ol> dengan kelas 'listdua'.
+ * Tujuan: Mengatur penanda daftar sebagai angka.
+ */
+ol.listdua {
+  list-style-type: decimal; /* Penanda angka */
+}
+
+/* 
+ * Gaya untuk elemen dengan kelas 'section1'.
+ * Tujuan: Membuat wadah kartu dengan latar belakang, padding, dan bayangan.
+ */
+.section1 {
+  background: var(--card-bg); /* Latar belakang putih */
+  padding: 1.5rem; /* Ruang dalam */
+  margin: 1rem 0; /* Jarak atas dan bawah */
+  border-radius: var(--border-radius); /* Sudut membulat */
+  box-shadow: var(--shadow); /* Efek bayangan */
+}
+
+/* 
+ * Gaya untuk elemen dengan kelas 'mark'.
+ * Tujuan: Menyoroti teks dengan latar belakang warna aksen dan teks putih.
+ */
+.mark {
+  background: var(--accent-color); /* Latar belakang biru aksen */
+  color: #ffffff; /* Warna teks putih */
+  font-style: italic; /* Teks miring */
+  font-weight: 600; /* Ketebalan font tebal */
+  padding: 0.2rem 0.5rem; /* Ruang dalam kecil */
+  border-radius: 6px; /* Sudut membulat kecil */
+}
+
+/* 
+ * Gaya untuk elemen dengan kelas 'animate-text'.
+ * Tujuan: Menambahkan animasi berdenyut untuk menarik perhatian.
+ */
+.animate-text {
+  color: var(--highlight-color); /* Warna sorotan merah muda */
+  font-size: 1.5rem; /* Ukuran font besar */
+  animation: pulse 2s ease-in-out infinite; /* Animasi berdenyut tanpa henti */
+}
+
+/* 
+ * Definisi keyframes untuk animasi 'pulse'.
+ * Tujuan: Membuat efek berdenyut dengan perubahan opacity dan skala.
+ */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1; /* Teks sepenuhnya terlihat */
+    transform: scale(1); /* Ukuran normal */
+  }
+  50% {
+    opacity: 0.7; /* Teks sedikit transparan */
+    transform: scale(1.05); /* Sedikit membesar */
+  }
+}
+
+/* 
+ * Gaya untuk elemen tautan <a> dengan kelas 'btn'.
+ * Tujuan: Membuat tombol dengan gaya modern, transisi halus, dan efek hover.
+ */
+a.btn {
+  display: inline-block; /* Menjadikan tautan seperti tombol */
+  background: var(--button-bg); /* Latar belakang biru tombol */
+  color: #ffffff; /* Warna teks putih */
+  text-decoration: none; /* Menghapus garis bawah tautan */
+  padding: 0.75rem 1.5rem; /* Ruang dalam tombol */
+  border-radius: var(--border-radius); /* Sudut membulat */
+  transition: var(--transition); /* Transisi halus untuk hover */
+  font-weight: 500; /* Ketebalan font sedang */
+}
+
+/* 
+ * Gaya untuk tombol saat hover.
+ * Tujuan: Memberikan efek visual saat kursor mengarah ke tombol.
+ */
+a.btn:hover {
+  background: var(--button-hover); /* Warna latar lebih gelap */
+  transform: translateY(-2px); /* Mengangkat tombol sedikit ke atas */
+  box-shadow: var(--shadow); /* Menambahkan bayangan */
+}
+
+/* 
+ * Media query untuk perangkat dengan lebar maksimum 768px (tablet dan ponsel).
+ * Tujuan: Menyesuaikan gaya agar responsif pada layar kecil.
+ */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px; /* Mengurangi padding untuk layar kecil */
+  }
+
+  h1 {
+    font-size: 2rem; /* Mengurangi ukuran font judul */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Mengurangi ukuran font heading sekunder */
+  }
+
+  .animate-text {
+    font-size: 1.25rem; /* Mengurangi ukuran font teks animasi */
+  }
+}
+
+/* 
+ * Media query untuk perangkat dengan lebar minimum 1200px (desktop besar).
+ * Tujuan: Membatasi lebar konten agar terpusat pada layar besar.
+ */
+@media (min-width: 1200px) {
+  body {
+    max-width: 1200px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Memusatkan konten di layar */
+  }
+}
